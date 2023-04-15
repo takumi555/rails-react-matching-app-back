@@ -1,4 +1,5 @@
 class Api::V1::UsersController < ApplicationController
+  before_action :set_user, only: [:show, :update]
 
   def index
     # 都道府県が同じで性別の異なるユーザーを取得(自分以外)
