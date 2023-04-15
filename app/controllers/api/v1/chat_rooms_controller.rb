@@ -9,7 +9,7 @@ class Api::V1::ChatRoomsController < ApplicationController
       # 情報: 相手ユーザ、最後に送信されたメッセージはどれか
       chat_rooms << {
         chat_room: chat_room,
-        other_user: chat_room.users.where.not(id: currnet_api_v1_user.id)[0],
+        other_user: chat_room.users.where.not(id: current_api_v1_user.id)[0],
         last_message: chat_room.messages[-1]
       }
     end

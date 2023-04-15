@@ -3,7 +3,7 @@ class Api::V1::UsersController < ApplicationController
 
   def index
     # 都道府県が同じで性別の異なるユーザーを取得(自分以外)
-    users = user.where(prefecture: current_api_v1_user.prefecture)
+    users = User.where(prefecture: current_api_v1_user.prefecture)
                 .where.not(id: current_api_v1_user.id, gender: current_api_v1_user.gender)
                 .order("created_at DESC")
                 
